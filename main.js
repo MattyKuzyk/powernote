@@ -3,7 +3,7 @@ $(document).ready(function() {
   var app = $.sammy('.nav', function() {
     this.get('#/', function(context) {
       $.ajax({
-        url: 'http://powernote.cloudapp.net/data/notebooks.json',
+        url: 'data/notebooks.json',
         dataType: 'json',
         crossDomain: true,
         success: function(notebooks) {
