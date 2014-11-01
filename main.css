@@ -1,5 +1,7 @@
 body {
   position: relative;
+  line-height: 22px;
+  font-family: 'Merriweather', serif;
 }
 .main {
   position: relative;
@@ -35,8 +37,9 @@ article {
 .editor {
   margin-left: 300px;
   height: 100%;
-  border: 1px solid;
-  padding: 50px;
+  border-left: 2px solid #c9c9c9;
+  border-top: 2px solid #c9c9c9;
+  padding: 15px 50px 50px 50px;
 }
 
 .header {
@@ -102,4 +105,13 @@ input {
     padding: 1px 3px;
     font-weight: bold;
     text-align: center;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+  font-size: 2.2em;
 }
