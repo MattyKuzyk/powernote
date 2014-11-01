@@ -29,3 +29,11 @@
 .header {
   height: 75px;
 }
+
+.section_header, .page_header {
+  border-bottom: 1px solid black;
+}
+
+.section_header p, .page_header p {
+  text-align: center;
+}
