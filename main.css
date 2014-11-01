@@ -51,3 +51,55 @@ article {
 .section_header p, .page_header p {
   text-align: center;
 }
+
+
+input {
+    border: none;
+    width: 80px;
+    font-size: 14px;
+    padding: 2px;
+}
+
+.spreadsheet {
+  padding: 15px;
+}
+
+
+.spreadsheet input {
+  border:0px solid #999;
+}
+
+.spreadsheet input:hover {
+    background-color: #eee;
+}
+
+.spreadsheet input:focus {
+  border:1px solid #1982d4
+}
+
+.spreadsheet input:not(:focus) {
+    text-align: right;
+}
+
+.spreadsheet table {
+    border-collapse: collapse;  
+}
+
+.spreadsheet td {
+    border: 1px solid #999;
+    padding: 0;
+}
+
+.spreadsheet tr:first-child td {
+    background-color: #f4f4f4;
+    padding: 1px 3px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.spreadsheet td:first-child {
+    background-color: #f4f4f4;
+    padding: 1px 3px;
+    font-weight: bold;
+    text-align: center;
+}
