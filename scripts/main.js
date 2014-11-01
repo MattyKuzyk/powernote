@@ -39,7 +39,9 @@ $(document).ready(function() {
         this.load('data/notebooks.json')
             .then(function(notebooks) {
               context.notebooks = notebooks;
-              renderNotebooks(context);
+              if (context.$element('.sections').children().not(':first').length == 0) {
+                renderNotebooks(context);
+              }
             })
             .then(callback);
     });
@@ -79,6 +81,11 @@ $(document).ready(function() {
     });
     var that = this;
     $(".sections").on('click', '.notebook', function(e) {
+
+      $.each($('.sections').children().not(':first'), function(i, section) {
+        $(section).removeClass('active');
+      });
+      $(this).addClass('active');
       document.location.hash = '#/notebooks/' + $(this).attr('notebook_id');
       // that.redirect('#/notebooks/' + $(this).attr('notebook_id'));
     });

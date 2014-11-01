@@ -1,3 +1,12 @@
 .notebook-title, .note-title {
+  margin: 0;
   text-align: center;
+}
+
+.notebook, .note {
+  padding: 16px 0;
+}
+
+.active {
+  background:rgba(0,0,0,0.2);
 }
