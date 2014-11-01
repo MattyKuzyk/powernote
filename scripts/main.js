@@ -1,9 +1,29 @@
 var insert = function(data) {
-    var caretPos = document.getElementById("editor").selectionStart;
-    var textAreaTxt = $("#editor").val();
-    var txtToAdd = data;
-    $("#editor").val(textAreaTxt.substring(0, caretPos) + txtToAdd + textAreaTxt.substring(caretPos) );
+  var sel, range, html, content;
+  var p = $(data);
+
+  if(p.length == 0) {
+    var content = document.createTextNode(data);
+  }
+
+  if (window.getSelection) {
+      sel = window.getSelection();
+      if (sel.getRangeAt && sel.rangeCount) {
+          range = sel.getRangeAt(0);
+          range.deleteContents();
+          if(content) {
+            range.insertNode(content);
+          } else {
+            for(var i=0; i<p.length; i++) {
+              range.insertNode(p[i])
+            }
+          }
+      }
+  } else if (document.selection && document.selection.createRange) {
+      document.selection.createRange().text = data;
+  }
 }
+
 
 $("#btn").on('click', function() {
   
