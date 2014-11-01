@@ -2,16 +2,13 @@ $(document).ready(function() {
 
   var app = $.sammy('.nav', function() {
     this.get('#/', function(context) {
-      $.ajax({
-        url: 'data/notebooks.json',
-        dataType: 'json',
-        crossDomain: true,
-        success: function(notebooks) {
-          $.each(notebooks, function(i, notebook) {
-            context.log(notebook.title, '-', notebook.description);
-          });
-        }
+      this.load('data/notebooks.json')
+        .then(function(items) {
+            $.each(items, function(i, item) {
+              context.render('templates/item.template', {item: item})
+               .appendTo(context.$element());
       });
+        });
     });
   });
 
