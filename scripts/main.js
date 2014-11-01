@@ -39,19 +39,16 @@ $(document).ready(function() {
         this.load('data/notebooks.json')
             .then(function(notebooks) {
               context.notebooks = notebooks;
+              renderNotebooks(context);
             })
             .then(callback);
     });
 
     this.get('#/', function(context) {
-      $.each(context.notebooks, function(i, notebook) {
-        context.render('templates/notebook-title.template', {notebook: notebook})
-         .appendTo(context.$element('.sections'));
-      });
     });
 
     this.get('#/notebooks/:id', function(context) {
-      // context.$element('.pages').not(':first').remove();
+      context.$element('.pages').children().not(':first').remove();
 
       $.each(context.notebooks, function(i, notebook) {
 
@@ -80,9 +77,25 @@ $(document).ready(function() {
 
 
     });
+    var that = this;
+    $(".sections").on('click', '.notebook', function(e) {
+      document.location.hash = '#/notebooks/' + $(this).attr('notebook_id');
+      // that.redirect('#/notebooks/' + $(this).attr('notebook_id'));
+    });
+
 
   });
 
   app.run('#/');
 
+
 });
+
+function renderNotebooks(context) {
+  context.$element('.sections').children().not(':first').remove();
+
+  $.each(context.notebooks, function(i, notebook) {
+    context.render('templates/notebook-title.template', {notebook: notebook})
+     .appendTo(context.$element('.sections'));
+  });
+}
