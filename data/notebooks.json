@@ -1,6 +1,6 @@
 [{
-  "id": 1,
-  "page_ids": [1],
+  "id": "1",
+  "page_ids": ["1"],
   "title": "Kartik's Diary",
   "description": "My most personal memoirs"
 }]
