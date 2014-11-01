@@ -1,0 +1,3 @@
+<div class="note">
+  <p class="note-title"><%= note.title %></p>
+</div>
