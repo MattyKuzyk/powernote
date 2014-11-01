@@ -16,14 +16,13 @@
   background-color: #EBF2F7;
   height: 90%;
 }
-.editor {
-  /*display: inline-block;*/
-  margin-left: 300px;
-}
 
-.editor textarea {
+.editor {
+  margin-left: 300px;
   width: 100%;
   height: 90%;
+  border: 1px solid;
+  padding: 50px;
 }
 
 .header {
