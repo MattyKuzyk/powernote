@@ -150,7 +150,6 @@ $('article').penplate();
     insert("<img src='http://powernote.cloudapp.net/uploads/" + file.name + "'>");
   });
 
-
 });
 
 function searchBing(element) {
@@ -256,4 +255,32 @@ var makeCode = function() {
   html += "</div></div>"
 
   insert(html);
+}
+
+
+var save = function() {
+  var txt = JSON.stringify($('article').html());
+  var data = '';
+
+  console.log(txt)
+var req = $.ajax({
+  type: 'PUT',
+  url: 'https://powernote.firebaseio.com/note.json',
+  data: txt,
+  async:false
+});
+
+  console.log(req.responseText)
+  return req;
+}
+
+var load = function() {
+  var req = $.ajax({
+    type: 'GET',
+    url: 'https://powernote.firebaseio.com/note.json',
+    async:false
+  });
+
+  $('article').html(JSON.parse(req.responseText))
+  return req;
 }
