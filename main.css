@@ -34,10 +34,7 @@
 }
 
 #right {
-  display: inline-block;
   overflow-y: scroll;
-  float:left;
-  width:865px;
   border: 1px solid;
   height: 82%;
   line-height: 35px !important;
@@ -45,6 +42,7 @@
   border-left: 2px solid #c9c9c9;
   border-top: 2px solid #c9c9c9;
   padding: 15px 50px 50px 50px;
+  margin-left: 375px;
 }
 
 .sections {
