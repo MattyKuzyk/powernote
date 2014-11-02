@@ -121,7 +121,12 @@ $(document).ready(function() {
   })
 
 $('.codeblock').codeblock();
-  // var pen = new Pen(options);
+
+  var myDropzone = new Dropzone("#editor",{url : "http://powernote.cloudapp.net/drop.php"});
+  myDropzone.on("complete", function(file) {
+    insert("<img src='http://powernote.cloudapp.net/uploads/" + file.name + "'>");
+  });
+
 
 });
 
