@@ -96,6 +96,18 @@ $(document).ready(function() {
   app.run('#/');
 
 
+  var options = {
+    editor: document.getElementById('editor'),
+    class: 'editor',
+    debug: false,
+    textarea: '<textarea id="editor" class="editor"></textarea>',
+    list: ['bold', 'italic', 'underline', 'h1', 'h2', 'h3', 'insertorderedlist', 'createlink'],
+    stay: false
+  }
+
+
+  // var pen = new Pen(options);
+
 });
 
 function renderNotebooks(context) {
@@ -105,4 +117,72 @@ function renderNotebooks(context) {
     context.render('templates/notebook-title.template', {notebook: notebook})
      .appendTo(context.$element('.sections'));
   });
+}
+
+
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+var makeTable = function(w, h) {
+  var id = makeid() + "_" ;
+  id="";
+  var table = "<table>\n";
+  for (var i = 0; i < h; i++) {
+    table += "\t<tr>\n";
+    for (var j = 0; j < w; j++) {
+      var letter = String.fromCharCode("A".charCodeAt(0) + j - 1);
+      table += "\t\t<td>\n"
+      table += (i && j) ? "<input id='" + id + letter + i + "'/>" : i || letter;
+      table += "\t\t</td>\n"
+    }
+    table += "\t</tr>\n";
+  }
+  table += "</table>\n";
+
+
+  insert(table);
+
+  var DATA = {};
+  var INPUTS = [].slice.call(document.querySelectorAll("input"));
+
+  INPUTS.forEach(function(elm) {
+    elm.onfocus = function(e) {
+      e.target.value = localStorage[e.target.id] || "";
+    };
+    elm.onblur = function(e) {
+      localStorage[e.target.id] = e.target.value;
+      computeAll();
+    };
+    var getter = function() {
+      var value = localStorage[elm.id] || "";
+      if (value.charAt(0) == "=") {
+        with(DATA) return eval(value.substring(1));
+      } else {
+        return isNaN(parseFloat(value)) ? value : parseFloat(value);
+      }
+    };
+    Object.defineProperty(DATA, elm.id, {
+      get: getter
+    });
+    Object.defineProperty(DATA, elm.id.toLowerCase(), {
+      get: getter
+    });
+  });
+
+  (window.computeAll = function() {
+    INPUTS.forEach(function(elm) {
+      try {
+        elm.value = DATA[elm.id];
+      } catch (e) {}
+    });
+  })();
+
 }
