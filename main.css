@@ -129,6 +129,7 @@ h1 {
 }
 
 .bing-modal {
+  box-sizing: border-box;
   display: none;
   position: fixed;
   left: 50%;
@@ -142,15 +143,17 @@ h1 {
 }
 
 .bing-search {
-  width: 100%;
+  width: 99%;
   height: 25px;
+  border: 1px solid black
 }
 
 .bing-image {
-  background: red;
   display: inline-block;
-  width: 49%;
+  width: 378px;
+  margin: 0 auto;
   height: 45%;
+  background-size: cover;
 }
 
 .code {
