@@ -109,6 +109,7 @@ $(document).ready(function() {
 
 
   $("#itable").on('click', function() {
+    localStorage = null;
     makeTable(6,6);
   })
 
@@ -122,6 +123,12 @@ $(document).ready(function() {
       searchBing(this);
     }
   })
+  $("#icode").on('click', function() {
+    makeCode();
+    $('.codeblock').codeblock();
+  })
+
+$('.codeblock').codeblock();
   // var pen = new Pen(options);
 
 });
@@ -205,4 +212,15 @@ var makeTable = function(w, h) {
     });
   })();
 
+}
+
+
+
+var makeCode = function() {
+  var html = '<div class="code"><div class="codeblock">var x = 10;';
+  html += "\nvar y = -101;\n";
+  html += "\nconsole.log(\"Success\", x+y);\n";
+  html += "</div></div>"
+
+  insert(html);
 }

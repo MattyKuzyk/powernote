@@ -152,3 +152,11 @@ h1 {
   width: 49%;
   height: 45%;
 }
+
+.code {
+  margin-left: 25px;
+}
+
+.codeblock {
+  width:700px;
+}
