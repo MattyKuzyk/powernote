@@ -3,10 +3,16 @@ body {
   line-height: 22px;
   font-family: 'Merriweather', serif;
 }
+
+*:focus {
+  outline: 0;
+}
+
 .main {
   position: relative;
   height: 90%;
 }
+
 .nav {
   width: 300px;
   float: left;
