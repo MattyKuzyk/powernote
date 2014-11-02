@@ -133,8 +133,12 @@ $(document).ready(function() {
     $('.codeblock').codeblock();
   });
 
-  $("#ilatex").on('click', function() {
+  $("#linsert").on('click', function() {
     insert(katex.renderToString($('#demo-input').text()))
+  });
+
+  $("#ilatex").on('click', function() {    
+    $('.latex').toggle();
   })
 
 $('.codeblock').codeblock();
