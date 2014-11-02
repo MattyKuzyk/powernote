@@ -106,6 +106,14 @@ $(document).ready(function() {
   }
 
 
+  $("#itable").on('click', function() {
+    makeTable(6,6);
+  })
+
+  $("#icamera").on('click', function() {
+    camera();
+  })
+
   // var pen = new Pen(options);
 
 });
@@ -134,7 +142,7 @@ function makeid()
 var makeTable = function(w, h) {
   var id = makeid() + "_" ;
   id="";
-  var table = "<table>\n";
+  var table = "<div class='spreadsheet'><table>\n";
   for (var i = 0; i < h; i++) {
     table += "\t<tr>\n";
     for (var j = 0; j < w; j++) {
@@ -145,7 +153,7 @@ var makeTable = function(w, h) {
     }
     table += "\t</tr>\n";
   }
-  table += "</table>\n";
+  table += "</table></div>\n";
 
 
   insert(table);
