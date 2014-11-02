@@ -156,9 +156,11 @@ function searchBing(element) {
   $.ajax({
     url: "http://powernote.cloudapp.net/bing.php?q=" + encodeURIComponent($(element).val())
   }).done(function(data) {
+    $('.bing-modal').children().not(':first').remove()
     var images = $.parseJSON(data)['d']['results'].slice(0, 4);
     $.each(images, function(i, image) {
-      $($('.bing-modal').children().not(':first')[i]).css('background-image', 'url(' + image['Thumbnail']['MediaUrl'] + ')');
+      $('.bing-modal').append($("<img/>").attr('src', image['Thumbnail']['MediaUrl']).css('width', '40%').addClass('bing-image'));
+      debugger
     });
   })
   .fail(function() {
