@@ -122,12 +122,16 @@ $(document).ready(function() {
     if (e.charCode === 13) {
       searchBing(this);
     }
-  })
+  });
+
+  $('#bing').click(function() {
+    $('.bing-modal').toggle();
+  });
 
   $("#icode").on('click', function() {
     makeCode();
     $('.codeblock').codeblock();
-  })
+  });
 
   $("#ilatex").on('click', function() {
     insert(katex.renderToString($('#demo-input').text()))
@@ -145,6 +149,17 @@ $('.codeblock').codeblock();
 
 function searchBing(element) {
 
+  $.ajax({
+    url: "http://powernote.cloudapp.net/bing.php?q=" + encodeURIComponent($(element).val())
+  }).done(function(data) {
+    var images = $.parseJSON(data)['d']['results'].slice(0, 4);
+    $.each(images, function(i, image) {
+      $($('.bing-modal').children().not(':first')[i]).css('background-image', 'url(' + image['Thumbnail']['MediaUrl'] + ')');
+    });
+  })
+  .fail(function() {
+    alert("error");
+  });
 }
 
 function renderNotebooks(context) {
