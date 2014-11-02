@@ -4,9 +4,11 @@
   	<script type="text/javascript" src="scripts/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/lib/sammy-latest.min.js"></script>
     <script type="text/javascript" src="scripts/lib/sammy.template.js"></script>
+    <script type="text/javascript" src="scripts/lib/xml2json.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="scripts/camera.js"></script>
   	<script type="text/javascript" src="scripts/lib/pen.js"></script>
+
 
 
     <link rel="stylesheet" type="text/css" href="scripts/lib/pen.css">
@@ -22,6 +24,7 @@
       <div id="menu">
       <button id="itable">Table</button>
       <button id="icamera">Camera</button>
+      <button id="bing">Bing</button>
       <!-- <button id=""></button> -->
       </div>
     </div>
@@ -39,12 +42,19 @@
           </div>
         </div>
       </div>
+        <div class="bing-modal">
+          <textarea class="bing-search"></textarea>
+          <div class="bing-image"></div>
+          <div class="bing-image bing-image-end"></div>
+          <div class="bing-image"></div>
+          <div class="bing-image"></div>
+        </div>
         <article contenteditable="true" tabindex="0" class="editor noselect" id="editor">
 
         <div data-keydown="section" data-keypress="section" data-click="section" data-clicktrack="0" data-mousedown="section" data-paste="section" data-copy="section" data-cut="section" data-dragstart="section-drag" data-dragend="section-drag" class="section verticalmargin" data-id="WNWACArcILc" data-section-style="1" data-section-type="0"><div class="backspace-decoy"><h1>Dinner party menu</h1>
       <h2>Endive and avocado salad with fennel vinaigrette</h2>
       <p><i>Serves 8; adapted from <a href="http://smittenkitchen.com/blog/2009/05/endive-and-celery-salad-with-fennel-vinaigrette/">Smitten Kitchen</a></i></p>
-      
+
 
       <ul><li>2 teaspoons fennel seeds, toasted</li><li>1/4 cup olive oil</li><li>3 tablespoons fresh lemon juice</li><li>3 tablespoons finely chopped shallot (1 large)</li><li>1 teaspoon salt</li><li>1/2 teaspoon sugar</li><li>1/2 pound frisée (French curly endive), torn into bite-size pieces (10 cups) </li><li>3 Belgian endives, cut crosswise into 1/2-inch-wide slices </li><li>2 avocados, thinly sliced </li></ul>
       <p>Grind fennel seeds in spice grinder. You don't want it to be too fine. Transfer to a small bowl or cup, then stir in oil until combined. Let stand 15 minutes.</p>
@@ -52,7 +62,7 @@
       <p>Toss lettuces and avocado in a large bowl with vinaigrette. Season with salt and pepper to taste.</p>
       <p></p>
       <h2>Shrimp cakes with roasted garlic-orange aioli</h2>
-      
+
       <p><i>Makes 8 patties; adapted from <a href="http://food52.com/recipes/12130-shrimp-burgers-with-roasted-garlic-orange-aioli">FOOD52</a></i></p>
       <h3>Roasted garlic–orange aioli</h3>
       <ul><li>2 heads garlic</li><li>1 cup plus 2 tablespoons extra virgin olive oil</li><li>4 large egg yolks, room temperature</li><li>1 cup extra virgin olive oil</li><li>Kosher salt</li><li>4 tablespoons freshly squeezed orange juice plus 2 teaspoon finely grated zest (from 1 orange)</li><li>Freshly ground black pepper</li></ul>
@@ -65,7 +75,7 @@
       <p></p>
       <h2>Strawberry Rhubarb Crumble</h2>
       <p><i>8-12 servings; adapted from <a href="http://www.101cookbooks.com/archives/strawberry-rhubarb-crumble-recipe.html">101 Cookbooks</a></i></p>
-      
+
       <ul><li>Butter for greasing skillet/pan (about 1 tablespoon)</li><li>3/4 cup whole wheat flour</li><li>1/2 cup rolled oats</li><li>1 tablespoon cornstarch</li><li>1 cup sugar</li><li>1/2 teaspoon fine grain sea salt</li><li>1/8 teaspoon freshly ground black pepper</li><li>1/3 cup unsalted butter, melted</li><li>1/2 lb hulled medium strawberries, cut into quarters</li><li>12 ounces trimmed rhubarb, sliced into 3/4-inch pieces</li></ul>
       <p>Preheat the oven to 375 degrees F. </p>
       <p>Combine the flour, oats, sugar, salt, and pepper together in a bowl. Stir in the butter and form the mixture into small chunks. Spread these out on a sheet of wax paper and chill for 20 minutes in the freezer. </p>
