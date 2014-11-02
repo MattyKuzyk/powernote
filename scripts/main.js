@@ -143,6 +143,8 @@ $(document).ready(function() {
 
 $('.codeblock').codeblock();
 
+$('article').penplate();
+
   var myDropzone = new Dropzone("#editor",{url : "http://powernote.cloudapp.net/drop.php", clickable: false});
   myDropzone.on("complete", function(file) {
     insert("<img src='http://powernote.cloudapp.net/uploads/" + file.name + "'>");
