@@ -85,7 +85,7 @@ input {
 }
 
 .spreadsheet table {
-    border-collapse: collapse;  
+    border-collapse: collapse;
 }
 
 .spreadsheet td {
@@ -114,4 +114,37 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.2em;
+}
+
+.fixed-dropdown-button {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.wrapper {
+    position: fixed;
+    bottom: 90px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#slide {
+    position: absolute;
+    right: -100px;
+    bottom: -75px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: blue;
+    transition: 1s;
+}
+
+.wrapper:hover #slide {
+    transition: 1s;
+    right: 0;
 }
