@@ -1,36 +1,52 @@
-body {
-  position: relative;
-  line-height: 22px;
-  font-family: 'Merriweather', serif;
-}
 
 *:focus {
   outline: 0;
 }
 
-.main {
-  position: relative;
-  height: 90%;
+* {margin:0;}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+
+#content {
+  border:0px solid;
+  height:99%;
 }
 
-.nav {
-  width: 300px;
-  float: left;
-  position: absolute;
-  top: 0;
-  bottom: 0;
+#nav {
+  height:50px;
+  display: block;
+  border: 1px solid;
 }
 
-article {
-  top: 0;
-  bottom: 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+#left {
+  float:left;
+  width:375px;
+  border: 1px solid;
+  display: inline-block;
+  height: 92%;
 }
+
+#right {
+  display: inline-block;
+  overflow-y: scroll;
+  float:left;
+  width:865px;
+  border: 1px solid;
+  height: 82%;
+  line-height: 35px !important;
+  font-family: 'Merriweather', serif;
+  border-left: 2px solid #c9c9c9;
+  border-top: 2px solid #c9c9c9;
+  padding: 15px 50px 50px 50px;
+}
+
 .sections {
   display: inline-block;
   float: left;
@@ -46,12 +62,21 @@ article {
   height: 100%;
 }
 
-.editor {
-  margin-left: 300px;
-  height: 100%;
-  border-left: 2px solid #c9c9c9;
-  border-top: 2px solid #c9c9c9;
-  padding: 15px 50px 50px 50px;
+
+#logo {
+  float:left;
+  display: block;
+  border: 1px solid;
+  width:375px;
+  height: 48px;
+}
+
+#menu {
+  float:left;
+  display: block;
+  border: 1px solid;
+  width:945px;
+  height: 48px;
 }
 
 .header {
@@ -163,4 +188,9 @@ h1 {
 
 .katex {
   font-size: 28px;
+}
+
+h1, h2, h3, h4, p, ul, ol, img, table {
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
