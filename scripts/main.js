@@ -31,6 +31,8 @@ $("#btn").on('click', function() {
 
 $(document).ready(function() {
 
+  var x2js = new X2JS();
+
   var app = $.sammy('.nav', function() {
     this.use('Template');
 
@@ -115,6 +117,12 @@ $(document).ready(function() {
     camera();
   })
 
+  $('.bing-search').on('keypress', function(e) {
+    // Enter key
+    if (e.charCode === 13) {
+      searchBing(this);
+    }
+  })
   $("#icode").on('click', function() {
     makeCode();
     $('.codeblock').codeblock();
@@ -129,6 +137,10 @@ $('.codeblock').codeblock();
 
 
 });
+
+function searchBing(element) {
+
+}
 
 function renderNotebooks(context) {
   context.$element('.sections').children().not(':first').remove();

@@ -97,7 +97,7 @@ input {
 }
 
 .spreadsheet table {
-    border-collapse: collapse;  
+    border-collapse: collapse;
 }
 
 .spreadsheet td {
@@ -126,6 +126,31 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.2em;
+}
+
+.bing-modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -400px;
+  margin-top: -250px;
+  height: 500px;
+  width: 800px;
+  padding: 20px;
+  background: #fff;
+}
+
+.bing-search {
+  width: 100%;
+  height: 25px;
+}
+
+.bing-image {
+  background: red;
+  display: inline-block;
+  width: 49%;
+  height: 45%;
 }
 
 .code {
