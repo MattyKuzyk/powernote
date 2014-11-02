@@ -11,7 +11,8 @@
     <script src="//rawgithub.com/ajaxorg/ace-builds/master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://ink.github.io/codeblock.js/javascripts/codeblock.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://rawgit.com/enyo/dropzone/master/downloads/dropzone.js" type="text/javascript" charset="utf-8"></script>
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="scripts/lib/pen.css">
@@ -30,7 +31,7 @@
       <button id="icamera">Camera</button>
       <button id="bing">Bing</button>
       <button id="icode">Code</button>
-      <!-- <button id=""></button> -->
+      <button id="ilatex">Latex</button>
       </div>
     </div>
 
@@ -89,6 +90,12 @@
       <p>Crumble the chilled chunks over the filling. Try to have a mix of sizes, but make sure the entire top is covered. </p>
       <p>Bake until the topping is deeply golden. This should take 35-40 minutes. Let cool slightly, but you'll want to serve this warm.</p></div></div></article>
         </div>
+
+
+<textarea id="demo-input" style="display:none" spellcheck="false">
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi</textarea>
 
   </body>
 </html>

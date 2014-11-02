@@ -160,3 +160,7 @@ h1 {
 .codeblock {
   width:700px;
 }
+
+.katex {
+  font-size: 28px;
+}

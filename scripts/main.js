@@ -123,9 +123,14 @@ $(document).ready(function() {
       searchBing(this);
     }
   })
+
   $("#icode").on('click', function() {
     makeCode();
     $('.codeblock').codeblock();
+  })
+
+  $("#ilatex").on('click', function() {
+    insert(katex.renderToString($('#demo-input').text()))
   })
 
 $('.codeblock').codeblock();
